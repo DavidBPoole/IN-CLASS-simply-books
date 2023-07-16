@@ -6,6 +6,8 @@ import { viewBookDetails } from '../../api/mergedData';
 export default function ViewBook() {
   const [bookDetails, setBookDetails] = useState({});
   const router = useRouter();
+  // * 👇️ link to catch all route */}
+  // <Link to="/does-not-exist">Catch all route</Link>;
 
   // TODO: grab firebaseKey from url
   const { firebaseKey } = router.query;

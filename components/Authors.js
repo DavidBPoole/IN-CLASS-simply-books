@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import AuthorCard from '../../components/AuthorCard';
-import { useAuth } from '../../utils/context/authContext';
-import { getAuthors } from '../../api/authorData';
+import AuthorCard from './AuthorCard';
+import { useAuth } from '../utils/context/authContext';
+import { getAuthors } from '../api/authorData';
 
 function ShowAuthors() {
   const [authors, setAuthors] = useState([{}]);

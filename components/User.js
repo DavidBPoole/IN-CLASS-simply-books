@@ -12,7 +12,7 @@ export default function UserProfile() {
       <Image src={user.photoURL} alt="userURL" width="100px" height="100px" />
       <h3>{user.email}</h3>
       <h4>Last SIgn In: {user.metadata.lastSignInTime}</h4>
-      <Button type="button" size="lg" className="copy-btn" onClick={signOut}>
+      <Button type="button" variant="danger" size="lg" className="copy-btn" onClick={signOut}>
         Sign Out
       </Button>
     </div>
