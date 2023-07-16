@@ -21,7 +21,7 @@ export default function ShowAuthors() {
   }, []);
 
   return (
-    <div className="flex-wrap">
+    <div className="d-flex flex-wrap">
       {authors.map((author) => (
         <AuthorCard key={author.firebaseKey} authorObj={author} onUpdate={getAllAuthors} />
       ))}
