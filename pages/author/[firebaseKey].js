@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import BookCard from '../../components/BookCard';
+// import AuthorCard from '../../components/AuthorCard';
 import viewAuthorDetails from '../../api/mergedData';
 
 export default function ViewAuthor() {
