@@ -39,7 +39,7 @@ AuthorCard.propTypes = {
   authorObj: PropTypes.shape({
     email: PropTypes.string,
     firebaseKey: PropTypes.string,
-    first_name: PropTypes.bool,
+    first_name: PropTypes.string,
     last_name: PropTypes.string,
     image: PropTypes.string,
     favorite: PropTypes.bool,
