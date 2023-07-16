@@ -47,6 +47,8 @@ const AuthConsumer = AuthContext.Consumer;
 
 const useAuth = () => {
   const context = useContext(AuthContext);
+  // NO IDEA WHAT THIS IS BELOW FROM STEP 7:
+  // const { user } = useAuth();
 
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
