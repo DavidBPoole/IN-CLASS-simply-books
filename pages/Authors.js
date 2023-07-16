@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import AuthorCard from './AuthorCard';
+import AuthorCard from '../components/AuthorCard';
 import { useAuth } from '../utils/context/authContext';
 import { getAuthors } from '../api/authorData';
 
-function ShowAuthors() {
-  const [authors, setAuthors] = useState([{}]);
+export default function ShowAuthors() {
+  const [authors, setAuthors] = useState([]);
 
   // TODO: Get user ID using useAuth Hook
   const { user } = useAuth();
@@ -19,6 +19,7 @@ function ShowAuthors() {
     getAllAuthors();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <div className="flex-wrap">
       {authors.map((author) => (
@@ -28,4 +29,24 @@ function ShowAuthors() {
   );
 }
 
-export default ShowAuthors;
+// ALTERNATE CODE BELOW:
+
+// import React, { useEffect, useState } from 'react';
+// import { useAuth } from '../utils/context/authContext';
+// import { getAuthors } from '../api/authorData';
+// import AuthorCard from '../components/AuthorCard';
+
+// export default function ShowAuthors() {
+//   const [authors, setAuthors] = useState([]);
+//   const { user } = useAuth();
+
+//   useEffect(() => {
+//     getAuthors(user.uid).then(setAuthors);
+//   }, [user.uid]);
+//   return (
+//     <div>{authors.map((author) => (
+//       <AuthorCard key={author.firebaseKey} authorObj={author} />
+//     ))}
+//     </div>
+//   );
+// }
