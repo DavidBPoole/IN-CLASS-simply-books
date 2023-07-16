@@ -1,7 +1,5 @@
-// TEST
-
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
@@ -15,7 +13,6 @@ const initialState = {
   email: '',
   favorite: false,
 };
-// this is a comment
 function AuthorForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
   const router = useRouter();

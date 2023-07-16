@@ -3,18 +3,18 @@ import AuthorCard from '../../components/AuthorCard';
 import { useAuth } from '../../utils/context/authContext';
 import { getAuthors } from '../../api/authorData';
 
-function ListAuthors() {
+function ShowAuthors() {
   const [authors, setAuthors] = useState([{}]);
 
   // TODO: Get user ID using useAuth Hook
   const { user } = useAuth();
 
-  // TODO: create a function that makes the API call to get all the books
+  // TODO: create a function that makes the API call to get all the authors
   const getAllAuthors = () => {
     getAuthors(user.uid).then(setAuthors);
   };
 
-  // TODO: make the call to the API to get all the books on component render
+  // TODO: make the call to the API to get all the authors on component render
   useEffect(() => {
     getAllAuthors();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -28,4 +28,4 @@ function ListAuthors() {
   );
 }
 
-export default ListAuthors;
+export default ShowAuthors;

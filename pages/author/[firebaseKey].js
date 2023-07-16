@@ -11,10 +11,6 @@ export default function ViewAuthor() {
   // TODO: grab firebaseKey from url
   const { firebaseKey } = router.query;
 
-  // const authDetails = () => {
-  //   viewAuthorDetails(firebaseKey).then(setAuthorDetails);
-  // };
-
   // TODO: make call to API layer to get the data
   useEffect(() => {
     viewAuthorDetails(firebaseKey).then(setAuthorDetails);

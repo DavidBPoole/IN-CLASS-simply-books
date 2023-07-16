@@ -15,7 +15,6 @@ const initialState = {
   sale: false,
   title: '',
 };
-
 function BookForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
   const [authors, setAuthors] = useState([]);
