@@ -3,7 +3,7 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-// TODO: GET BOOKS
+// TODO: GET BOOKS **CANT SEE SAMPLE DATA BOOKS FROM FIREBASE, BUT CAN SEE BOOKS CREATED WITHIN APP**
 const getBooks = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
@@ -22,7 +22,7 @@ const getBooks = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: DELETE BOOK
+// TODO: DELETE BOOK **WORKS**
 const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -48,7 +48,7 @@ const getSingleBook = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: CREATE BOOK
+// TODO: CREATE BOOK **WORKS, BUT GENERATES ANOTHER UNUSED FIREBASEKEY IN THE FB DATABASE**
 const createBook = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books.json`, {
     method: 'POST',
@@ -62,7 +62,7 @@ const createBook = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: UPDATE BOOK
+// TODO: UPDATE BOOK **WORKS**
 const updateBook = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books/${payload.firebaseKey}.json`, {
     method: 'PATCH',
