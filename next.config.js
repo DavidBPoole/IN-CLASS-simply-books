@@ -2,7 +2,5 @@ module.exports = {
   reactStrictMode: true,
   // I don't want it to run when compiling as I trust the CI stage of the pipeline and Husky.
   ignoreDuringBuilds: true,
-  images: {
-    domain: ['lh3.googleusercontent.com'],
-  },
+  images: { domains: ['lh3.googleusercontent.com'] },
 };
