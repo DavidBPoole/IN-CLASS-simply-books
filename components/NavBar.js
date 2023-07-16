@@ -6,6 +6,8 @@ import Link from 'next/link';
 import {
   Navbar, Container, Nav,
 } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import signOut from '../utils/auth';
 
 export default function NavBar() {
   return (
@@ -33,6 +35,9 @@ export default function NavBar() {
             <Link passHref href="/pages/profile">
               <Nav.Link>Profile</Nav.Link>
             </Link>
+            <Button variant="danger" type="button" size="md" className="copy-btn" onClick={signOut}>
+              Sign Out
+            </Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
