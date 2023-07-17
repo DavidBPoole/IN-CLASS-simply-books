@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import BookCard from '../../components/BookCard';
 // import AuthorCard from '../../components/AuthorCard';
@@ -21,7 +22,7 @@ export default function ViewAuthor() {
     <>
       <div className="mt-5 d-flex flex-wrap">
         <div className="d-flex flex-column">
-          <image src={authorDetails.image} alt={authorDetails.first_name} style={{ width: '200px' }} />
+          <Image src={authorDetails.image} alt={authorDetails.first_name} style={{ width: '200px' }} />
         </div>
         <div className="text-white ms-5 details">
           <h5>
