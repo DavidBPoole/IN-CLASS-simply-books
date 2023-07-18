@@ -12,6 +12,7 @@ function Home() {
 
   // TODO: Get user ID using useAuth Hook
   const { user } = useAuth();
+  console.warn(user);
 
   // TODO: create a function that makes the API call to get all the books
   const getAllTheBooks = () => {

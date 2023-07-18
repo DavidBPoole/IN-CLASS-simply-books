@@ -33,8 +33,7 @@ function AuthorForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateAuthor(formInput)
-        .then(() => router.push(`/author/${obj.firebaseKey}`));
+      updateAuthor(formInput).then(() => router.push(`/author/${obj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createAuthor(payload).then(({ name }) => {
@@ -49,46 +48,37 @@ function AuthorForm({ obj }) {
   return (
     <Form onSubmit={handleSubmit}>
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Author</h2>
-
-      {/* TITLE INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="First Name" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Enter a First name"
+          placeholder="Enter first name"
           name="first_name"
           value={formInput.first_name}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
-
-      {/* PRICE INPUT  */}
-      <FloatingLabel controlId="floatingInput3" label="Last Name" className="mb-3">
+      <FloatingLabel controlId="floatingInput2" label="Last Name" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Last Name"
+          placeholder="Enter last Name"
           name="last_name"
           value={formInput.last_name}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
-
-      {/* DESCRIPTION TEXTAREA  */}
-      <FloatingLabel controlId="floatingTextarea" label="Email" className="mb-3">
+      <FloatingLabel controlId="floatingInput3" label="Email" className="mb-3">
         <Form.Control
-          as="textarea"
-          placeholder="email"
-          style={{ height: '100px' }}
+          type="email"
+          placeholder="Enter email"
           name="email"
           value={formInput.email}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
-
-      {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
-      <Form.Check
+      {/* <Form.Check
         className="text-white mb-3"
         type="switch"
         id="Favorite"
@@ -101,8 +91,7 @@ function AuthorForm({ obj }) {
             favorite: e.target.checked,
           }));
         }}
-      />
-
+      /> */}
       {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Author</Button>
     </Form>
