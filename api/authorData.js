@@ -3,7 +3,7 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-// FIXME:  GET ALL AUTHORS **CANT SEE AUTHORS**
+// FIXME:  GET ALL AUTHORS
 const getAuthors = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
@@ -22,7 +22,7 @@ const getAuthors = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXME: CREATE AUTHOR **FIXED**
+// FIXME: CREATE AUTHOR
 const createAuthor = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors.json`, {
     method: 'POST',
@@ -36,7 +36,7 @@ const createAuthor = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXME: GET SINGLE AUTHOR **CANT SEE AUTHORS**
+// FIXME: GET SINGLE AUTHOR
 const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors/${firebaseKey}.json`, {
     method: 'GET',
@@ -49,7 +49,7 @@ const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXME: DELETE AUTHOR **CANT SEE AUTHORS TO EVEN DELETE**
+// FIXME: DELETE AUTHOR - NEWLY CREATED AUTHORS WONT DELETE
 const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -62,9 +62,9 @@ const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXME: UPDATE AUTHOR **CANT SEE AUTHORS TO EVEN UPDATE**
+// FIXME: UPDATE AUTHOR - Corrected pathway, but newly created authors cannot be edited or deleted still - issue in authorform.js
 const updateAuthor = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books/${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/authors/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const updateAuthor = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: GET A SINGLE AUTHOR'S BOOKS **CANT SEE AUTHORS**
+// TODO: GET A SINGLE AUTHOR'S BOOKS
 const getSingleAuthorBooks = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books.json?orderBy="author_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
@@ -89,7 +89,7 @@ const getSingleAuthorBooks = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: FILTER A FAVORITE AUTHOR'S BOOKS **CANT SEE AUTHORS**
+// TODO: FILTER A FAVORITE AUTHOR'S BOOKS
 const favoriteAuthors = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',

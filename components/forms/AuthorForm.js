@@ -46,6 +46,7 @@ function AuthorForm({ obj }) {
     }
   };
 
+  // ISSUE IS BEING REPORTED FOR LINE BELOW - it keeps having an issue with the firebase key for author editing and deletion and I dont know why...<h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Author</h2>
   return (
     <Form onSubmit={handleSubmit}>
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Author</h2>
