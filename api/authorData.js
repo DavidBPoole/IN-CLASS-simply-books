@@ -77,7 +77,7 @@ const updateAuthor = (payload) => new Promise((resolve, reject) => {
 });
 
 // TODO: GET A SINGLE AUTHOR'S BOOKS
-const getSingleAuthorBooks = (firebaseKey) => new Promise((resolve, reject) => {
+const getAuthorBooks = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books.json?orderBy="author_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
@@ -112,5 +112,5 @@ export {
   deleteSingleAuthor,
   updateAuthor,
   favoriteAuthors,
-  getSingleAuthorBooks,
+  getAuthorBooks,
 };
