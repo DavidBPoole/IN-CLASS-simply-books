@@ -3,7 +3,7 @@
 # Overview
 Online bookstore minus checkout demonstrating the full use of CRUD with authentication and firebase database.
 
-[View App](https://davidbpoole-joke-generator-react.netlify.app/](https://davidbpoole-simply-books.netlify.app))
+[View App](https://davidbpoole-simply-books.netlify.app/)
 
 ## Contributor
 [David Poole](https://github.com/DavidBPoole)
