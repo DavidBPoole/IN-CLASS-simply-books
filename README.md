@@ -1,5 +1,14 @@
-# Simply Books
+# REACT APP - Simply Books [![Netlify Status](https://api.netlify.com/api/v1/badges/f2e44228-28d9-4da7-9b93-c9a666c499f0/deploy-status)](https://app.netlify.com/sites/davidbpoole-simply-books/deploys)
 
+# Overview
+Online bookstore minus checkout demonstrating the full use of CRUD with authentication and firebase database.
+
+[View App](https://davidbpoole-joke-generator-react.netlify.app/](https://davidbpoole-simply-books.netlify.app))
+
+## Contributor
+[David Poole](https://github.com/DavidBPoole)
+
+# REACT TEMPLATE
 [See Live Demo of this Template](https://drt-next-js-template.netlify.app/)
 
 - [Get Started](#get-started)
